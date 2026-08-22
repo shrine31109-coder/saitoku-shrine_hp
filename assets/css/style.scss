@@ -1,0 +1,467 @@
+---
+---
+/* ============================================
+   歳徳神社 公式サイト - ベーススタイル
+   モノスペース × ブルーのデュオトーンを基調とした
+   ミニマルデザイン
+   ============================================ */
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1f4a85;
+  --color-text-muted: #5c6f8f;
+  --color-border: #a9bede;
+  --color-accent: #2c5aa0;
+  --color-accent-dark: #1c3f73;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", monospace;
+  --font-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --content-width: 1140px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+hr.dashed {
+  border: none;
+  border-top: 1px dashed var(--color-border);
+  margin: 3rem 0;
+}
+
+hr.thin {
+  border: none;
+  border-top: 1px dashed var(--color-border);
+  margin: 1.5rem 0;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.site-header__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  line-height: 1.3;
+}
+
+.site-header__brand-ja {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+}
+
+.site-header__brand-en {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+.site-nav__link {
+  font-family: var(--font-serif);
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.site-nav__link:hover {
+  text-decoration: underline;
+}
+
+.site-nav__link.is-active {
+  font-weight: 700;
+}
+
+/* ---------- Main / Layout ---------- */
+
+.site-main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+section + section {
+  margin-top: 4rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--color-accent);
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  margin: 0 0 0.85rem;
+}
+
+p {
+  color: var(--color-text);
+}
+
+/* ---------- Hero (トップページ) ---------- */
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 48%) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.hero__grid > * {
+  min-width: 0;
+}
+
+.hero__media {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.hero__media img,
+.hero__media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-block {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.photo-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 写真をブルーのデュオトーン調に統一 */
+.hero__media,
+.split__media,
+.photo-block {
+  position: relative;
+  background: #0d1b30;
+}
+
+.hero__media img,
+.split__media img,
+.photo-block img {
+  filter: grayscale(1) contrast(1.15) brightness(1.05);
+}
+
+.hero__media::after,
+.split__media::after,
+.photo-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #2c5aa0;
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
+/* このクラスを付けた写真はデュオトーン加工を無効化（元の色のまま表示） */
+.no-duotone img {
+  filter: none;
+}
+
+.no-duotone::after {
+  content: none;
+}
+
+.hero__label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--color-accent);
+  margin: 0 0 1rem;
+}
+
+.hero__content p {
+  font-size: 0.95rem;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1.75rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.hero__fact dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.hero__fact dd {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* ---------- 画像+テキストの2カラムセクション（アクセス／お知らせ） ---------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(260px, 42%) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.split > * {
+  min-width: 0;
+}
+
+.split__media {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- カード（お知らせ一覧など） ---------- */
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-list__item {
+  border-bottom: 1px dashed var(--color-border);
+  padding: 1.1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  font-size: 0.9rem;
+}
+
+.news-list__date {
+  color: var(--color-text-muted);
+  min-width: 7em;
+}
+
+.news-list__title a {
+  color: var(--color-text);
+}
+
+.news-list__title a:hover {
+  color: var(--color-accent);
+}
+
+.news-list__empty {
+  color: var(--color-text-muted);
+  padding: 1.5rem 0;
+}
+
+/* ---------- 記事ページ ---------- */
+
+.post__date {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.post__title {
+  margin-top: 0;
+}
+
+.post__back {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- 情報テーブル（参拝時間・アクセス） ---------- */
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.info-table th,
+.info-table td {
+  text-align: left;
+  padding: 0.75rem 1rem 0.75rem 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.info-table th {
+  width: 35%;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.rite-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+}
+
+.rite-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.rite-list li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+.map-embed {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.note {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.rites-note {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px dashed var(--color-border);
+}
+
+.site-footer__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.site-footer__name {
+  color: var(--color-text);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- レスポンシブ ---------- */
+
+@media (max-width: 560px) {
+  .hero__grid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    gap: 1.1rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+}

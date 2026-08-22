@@ -1,0 +1,19 @@
+---
+layout: default
+title: お知らせ
+---
+
+<h1>お知らせ</h1>
+
+{% if site.posts.size > 0 %}
+  <ul class="news-list">
+    {% for post in site.posts %}
+      <li class="news-list__item">
+        <span class="news-list__date">{{ post.date | date: "%Y.%m.%d" }}</span>
+        <span class="news-list__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="news-list__empty">現在お知らせはありません。</p>
+{% endif %}

@@ -1,0 +1,11 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+Gemfile.lock
+.DS_Store
+
+# 写真の元データ（圧縮前・高解像度）。サイト公開には不要なためGit管理外。
+assets/images-original/

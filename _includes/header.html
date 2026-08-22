@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}">
+      <span class="site-header__brand-ja">歳徳神社</span>
+      <span class="site-header__brand-en">SAITOKU SHRINE</span>
+    </a>
+    <nav class="site-nav">
+      {% for item in site.nav %}
+        <a class="site-nav__link{% if page.url == item.path %} is-active{% endif %}"
+           href="{{ item.path | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

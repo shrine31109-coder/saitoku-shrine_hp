@@ -1,0 +1,43 @@
+title: "歳徳神社"
+description: "歳徳神社の公式サイトです。由緒、参拝時間・アクセス、季節のお知らせを掲載しています。"
+lang: ja
+
+# GitHub Pages が https://shrine31109-coder.github.io/saitoku-shrine_hp/ で公開する前提の設定。
+# 独自ドメインを設定する場合は空文字 "" に変更してください。
+baseurl: "/saitoku-shrine_hp"
+url: "https://shrine31109-coder.github.io"
+
+# ナビゲーションメニュー（共通ヘッダーで使用）
+nav:
+  - title: "HOME"
+    path: "/"
+  - title: "参拝時間・アクセス"
+    path: "/access.html"
+  - title: "お知らせ"
+    path: "/news.html"
+
+markdown: kramdown
+
+# CSSをビルド時に自動で圧縮（minify）する
+sass:
+  style: compressed
+
+# 未来の日付の記事も一覧・詳細ページに含める（下書き段階の記事を先に用意しておくため）
+future: true
+
+# permalink はページ全体の URL 形式(pretty 化)にも影響するため、
+# _posts コレクションだけに限定して適用する
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: /news/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
