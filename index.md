@@ -1,6 +1,6 @@
 ---
 layout: default
-title: HOME
+description: "栃木県宇都宮市富士見ヶ丘の歳徳神社。由緒・御祭神のご紹介、最新のお知らせ、参拝時間・アクセス情報を掲載しています。"
 ---
 
 <section class="hero">
@@ -24,7 +24,7 @@ title: HOME
       <dl class="hero__facts">
         <div class="hero__fact">
           <dt>御祭神</dt>
-          <dd>大歳神の大神</dd>
+          <dd>歳徳神の大神</dd>
         </div>
         <div class="hero__fact">
           <dt>神邦詞</dt>

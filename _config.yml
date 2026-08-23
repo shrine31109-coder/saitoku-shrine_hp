@@ -1,6 +1,13 @@
 title: "歳徳神社"
-description: "歳徳神社の公式サイトです。由緒、参拝時間・アクセス、季節のお知らせを掲載しています。"
+tagline: "栃木県宇都宮市の神社"
+description: "栃木県宇都宮市富士見ヶ丘にある歳徳神社のご案内サイトです。由緒、参拝時間・アクセス、季節のお知らせを掲載しています。"
 lang: ja
+
+# 構造化データ・SEO用（同名の神社が全国各地にあるため、所在地を明示する）
+address: "栃木県宇都宮市富士見ヶ丘3-3-12"
+telephone: "028-624-8719"
+locality: "宇都宮市"
+region: "栃木県"
 
 # GitHub Pages が https://shrine31109-coder.github.io/saitoku-shrine_hp/ で公開する前提の設定。
 # 独自ドメインを設定する場合は空文字 "" に変更してください。
@@ -36,6 +43,8 @@ defaults:
 
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - README.md

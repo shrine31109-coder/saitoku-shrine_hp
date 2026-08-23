@@ -452,6 +452,10 @@ p {
 }
 
 @media (max-width: 600px) {
+  .site-main {
+    padding: 2rem 1rem 3rem;
+  }
+
   .site-header__inner {
     flex-direction: column;
     align-items: flex-start;
@@ -461,7 +465,61 @@ p {
     gap: 1.1rem;
   }
 
+  section + section {
+    margin-top: 2.5rem;
+  }
+
+  hr.dashed {
+    margin: 2rem 0;
+  }
+
   h1 {
     font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 0.92rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+
+  .hero__content p {
+    font-size: 0.88rem;
+  }
+
+  /* 項目のバラバラな折り返しを避け、1行ずつ縦に並べる */
+  .hero__facts,
+  .rite-list {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .hero__facts {
+    gap: 1rem;
+  }
+
+  /* 表を「ラベル→値」の縦積みにして、狭い画面での窮屈さを防ぐ */
+  .info-table tr {
+    display: block;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--color-border);
+  }
+
+  .info-table th,
+  .info-table td {
+    display: block;
+    width: auto;
+    padding: 0.1rem 0;
+    border-bottom: none;
+  }
+
+  .info-table th {
+    font-size: 0.78rem;
+  }
+
+  .rites-note {
+    font-size: 0.9rem;
   }
 }
