@@ -96,7 +96,7 @@ Rubyがインストールされている環境であれば、以下でローカ�
 
 ```bash
 bundle install
-bundle exec jekyll serve
+RUBYOPT=-r./preview-ruby4.rb bundle exec jekyll serve
 ```
 
 `http://localhost:4000/saitoku-shrine_hp/` で確認できます。

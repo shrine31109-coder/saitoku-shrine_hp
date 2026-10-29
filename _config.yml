@@ -18,10 +18,10 @@ url: "https://shrine31109-coder.github.io"
 nav:
   - title: "HOME"
     path: "/"
+  - title: "初詣に関するお知らせ"
+    path: "/news.html"
   - title: "参拝時間・アクセス"
     path: "/access.html"
-  - title: "お知らせ"
-    path: "/news.html"
 
 markdown: kramdown
 
@@ -47,6 +47,7 @@ plugins:
   - jekyll-sitemap
 
 exclude:
+  - preview-ruby4.rb
   - deployment
   - README.md
   - Gemfile
